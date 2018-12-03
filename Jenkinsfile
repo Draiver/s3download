@@ -4,13 +4,13 @@ pipeline {
             label 'Master'
         }
     }
+    options {
+	withAWS(profile:'myProfile')
 stages {
     stage('S3download') {
       steps {
-    withAWS(profile:'myProfile') {
-        s3Download(file:'conf.txt', bucket:'jenkins1test', path:'/', force:true)
-      }
-    }
+            s3Download(file:'conf.txt', bucket:'jenkins1test', path:'/', force:true)
+        }
     }
 }
 }
