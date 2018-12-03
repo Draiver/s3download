@@ -2,7 +2,7 @@ pipeline {
     agent {
         node {
             label 'Master'
-            {
+        }
         {
 stages {
     stage('S3download') {
