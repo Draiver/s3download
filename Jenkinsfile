@@ -7,7 +7,7 @@ pipeline {
 stages {
     stage('S3download') {
       steps {
-    withAWS(profile:'myProfile') {
+    withAWS(profile:'default') {
         s3Download(file:'conf.txt', bucket:'jenkins1test', path:'/home/ilia/GitHub/s3test', force:true)
       }
     }
